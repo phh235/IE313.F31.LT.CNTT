@@ -25,5 +25,30 @@ headers = ["symboling", "normalized-losses", "make", "fuel-type", "aspiration",
 
 df = pd.read_csv(data_path, names=headers)
 
+# Xem dữ liệu
 print(df.head())
+print(df.tail())
 
+# Thông tin
+print(df.shape)
+print(df.columns)
+print(df.dtypes)
+df.info()
+
+# Thống kê
+print(df.describe())
+print(df.describe(include="all"))
+
+# Truy xuất
+print(df["price"])
+print(df[["make", "price"]])
+
+print(df.iloc[0])
+print(df.iloc[0:5])
+print(df.iloc[0, 2])
+
+print(df.loc[:, "price"])
+print(df.loc[:, ["make", "price"]])
+
+# Xuất dữ liệu
+df.to_csv("datasetV2.csv", index=False)
